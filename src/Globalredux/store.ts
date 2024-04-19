@@ -1,11 +1,11 @@
 "use client";
 import { configureStore } from "@reduxjs/toolkit";
-import userReducer from "./tableSlice";
+import tableReducer from "./tableSlice";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 
 const store = configureStore({
   reducer: {
-    user: userReducer,
+    table: tableReducer,
   },
 });
 

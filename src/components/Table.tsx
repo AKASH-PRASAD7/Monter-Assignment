@@ -1,28 +1,7 @@
+"use client";
 import { FileDown } from "lucide-react";
 import React from "react";
-
-const data = [
-  {
-    date: "19.04.2020",
-    reportName: "APP_URL_202004_Sales.csv",
-    download: true,
-  },
-  {
-    date: "18.04.2020",
-    reportName: "APP_URL_202004_Profit.csv",
-    download: true,
-  },
-  {
-    date: "17.04.2020",
-    reportName: "APP_URL_202004_Expenses.csv",
-    download: true,
-  },
-  {
-    date: "16.04.2020",
-    reportName: "APP_URL_202004_Customers.csv",
-    download: true,
-  },
-];
+import { useAppSelector } from "@/Globalredux/store";
 
 const columns = [
   {
@@ -40,6 +19,12 @@ const columns = [
 ];
 
 const Table = () => {
+  const { data, page, rowsPerPage, total } = useAppSelector(
+    (state) => state.table
+  );
+
+  const start = (page - 1) * rowsPerPage;
+  const end = page * rowsPerPage;
   return (
     <>
       <section className="w-11/12">
@@ -52,22 +37,26 @@ const Table = () => {
             </tr>
           </thead>
           <tbody className="bg-slate-100">
-            {data.map((row: any) => (
-              <tr key={row.date}>
-                {columns.map((column) => (
-                  <td className="text-center" key={column.accessor}>
-                    {column.accessor === "download" ? (
-                      <FileDown
-                        size={32}
-                        className=" cursor-pointer mx-auto text-gray-500  "
-                      />
-                    ) : (
-                      row[column.accessor]
-                    )}
-                  </td>
-                ))}
-              </tr>
-            ))}
+            {data.map(
+              (row, index) =>
+                index >= start &&
+                index <= end && (
+                  <tr key={row.date}>
+                    {columns.map((column) => (
+                      <td className="text-center" key={column.accessor}>
+                        {column.accessor === "download" ? (
+                          <FileDown
+                            size={32}
+                            className=" cursor-pointer mx-auto text-gray-500  "
+                          />
+                        ) : (
+                          row[column.accessor]
+                        )}
+                      </td>
+                    ))}
+                  </tr>
+                )
+            )}
           </tbody>
         </table>
       </section>

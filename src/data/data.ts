@@ -194,6 +194,11 @@ const data = [
     reportName: "APP_URL_202003_Expenses.csv",
     download: true,
   },
+  {
+    date: "07.04.2020",
+    reportName: "APP_URL_202004_Inventory.csv",
+    download: true,
+  },
 ];
 
 export default data;
