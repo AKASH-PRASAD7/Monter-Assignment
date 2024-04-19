@@ -3,49 +3,24 @@ import React from "react";
 
 const data = [
   {
-    date: "2024-04-19",
-    reportName: "Monthly Sales Report",
-    download: "https://example.com/monthly-sales-report.pdf",
+    date: "19.04.2020",
+    reportName: "APP_URL_202004_Sales.csv",
+    download: true,
   },
   {
-    date: "2024-04-18",
-    reportName: "Quarterly Financial Statement",
-    download: "https://example.com/quarterly-financial-statement.pdf",
+    date: "18.04.2020",
+    reportName: "APP_URL_202004_Profit.csv",
+    download: true,
   },
   {
-    date: "2024-04-17",
-    reportName: "Annual Marketing Analysis",
-    download: "https://example.com/annual-marketing-analysis.pdf",
+    date: "17.04.2020",
+    reportName: "APP_URL_202004_Expenses.csv",
+    download: true,
   },
   {
-    date: "2024-04-19",
-    reportName: "Monthly Sales Report",
-    download: "https://example.com/monthly-sales-report.pdf",
-  },
-  {
-    date: "2024-04-18",
-    reportName: "Quarterly Financial Statement",
-    download: "https://example.com/quarterly-financial-statement.pdf",
-  },
-  {
-    date: "2024-04-17",
-    reportName: "Annual Marketing Analysis",
-    download: "https://example.com/annual-marketing-analysis.pdf",
-  },
-  {
-    date: "2024-04-19",
-    reportName: "Monthly Sales Report",
-    download: "https://example.com/monthly-sales-report.pdf",
-  },
-  {
-    date: "2024-04-18",
-    reportName: "Quarterly Financial Statement",
-    download: "https://example.com/quarterly-financial-statement.pdf",
-  },
-  {
-    date: "2024-04-17",
-    reportName: "Annual Marketing Analysis",
-    download: "https://example.com/annual-marketing-analysis.pdf",
+    date: "16.04.2020",
+    reportName: "APP_URL_202004_Customers.csv",
+    download: true,
   },
 ];
 
