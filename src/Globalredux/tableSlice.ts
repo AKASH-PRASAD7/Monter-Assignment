@@ -31,6 +31,7 @@ export const tableSlice = createSlice({
 
     setRowsPerPage: (state, action) => {
       state.rowsPerPage = action.payload;
+      state.page = 1;
     },
   },
 });
