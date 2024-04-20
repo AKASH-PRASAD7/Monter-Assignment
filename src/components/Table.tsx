@@ -3,6 +3,12 @@ import { FileDown } from "lucide-react";
 import React from "react";
 import { useAppSelector } from "@/Globalredux/store";
 
+interface RowType {
+  date: string;
+  reportName: string;
+  download: boolean;
+}
+
 const columns = [
   {
     Header: "Date",
@@ -27,8 +33,8 @@ const Table = () => {
   const end = page * rowsPerPage;
   return (
     <>
-      <section className="w-11/12">
-        <table className="w-full ">
+      <section className="w-11/12 ">
+        <table className="w-full  ">
           <thead className="bg-slate-200">
             <tr className="text-slate-500">
               {columns.map((column) => (
@@ -38,7 +44,7 @@ const Table = () => {
           </thead>
           <tbody className="bg-slate-100">
             {data.map(
-              (row, index) =>
+              (row: RowType, index: number) =>
                 index >= start &&
                 index <= end && (
                   <tr key={row.date}>
@@ -47,10 +53,12 @@ const Table = () => {
                         {column.accessor === "download" ? (
                           <FileDown
                             size={32}
-                            className=" cursor-pointer mx-auto text-gray-500  "
+                            className=" cursor-pointer mx-auto  "
                           />
                         ) : (
-                          row[column.accessor]
+                          <span className="xs:text-xs sm:text-sm  md:text-lg lg:text-xl">
+                            {row[column.accessor as keyof RowType]}
+                          </span>
                         )}
                       </td>
                     ))}

@@ -22,11 +22,11 @@ const Pagination = () => {
 
   return (
     <>
-      <main className="flex justify-between w-1/2 mt-2 items-center mb-24">
-        <section className="flex justify-center items-center  gap-4">
+      <main className="flex justify-between  mt-2 items-center mb-24">
+        <section className="flex justify-center items-center mx-2 gap-4">
           <span
             onClick={() => dispatch(prevPage())}
-            className="flex text-gray-700  cursor-pointer  justify-center items-center "
+            className="flex text-gray-700 xs:text-sm sm:text-sm  md:text-lg lg:text-xl  cursor-pointer  justify-center items-center "
           >
             <ChevronFirst size={32} />
             Prev
@@ -69,14 +69,14 @@ const Pagination = () => {
           </div>
           <span
             onClick={() => dispatch(nextPage())}
-            className="flex  cursor-pointer text-gray-700 justify-center items-center "
+            className="flex xs:text-sm sm:text-sm  md:text-lg lg:text-xl   cursor-pointer text-gray-700 justify-center items-center "
           >
             Next
             <ChevronLast size={32} />
           </span>
         </section>
 
-        <section className="flex text-gray-700 gap-4">
+        <section className="flex xs:text-sm sm:text-sm mx-2 md:text-lg lg:text-xl  text-gray-700 gap-4">
           <p>Rows per page</p>
           <select
             onChange={(e) => handleSelectChange(e)}

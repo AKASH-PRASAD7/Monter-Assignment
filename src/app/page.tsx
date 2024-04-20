@@ -3,10 +3,13 @@ import Table from "@/components/Table";
 import { Filter, X } from "lucide-react";
 export default function Home() {
   return (
-    <main className=" relative mx-8 mt-8">
-      <section className="flex  justify-center items-center">
-        <p className="text-xl font-semibold"> Recently Generated Reports</p>
-        <span className="flex gap-4 absolute right-10 ">
+    <main className="  xs:mx-1 sm:mx-2  md:mx-4 lg:mx-8 mt-8">
+      <section className="flex w-full  relative justify-center items-center">
+        <p className=" xs:text-sm sm:text-sm  md:text-lg lg:text-xl font-semibold">
+          {" "}
+          Recently Generated Reports
+        </p>
+        <span className="flex gap-4  absolute xs:right-0 sm:right-0 md:right-5 lg:right-10 ">
           <Filter
             size={34}
             className="border-2 cursor-pointer border-gray-500 text-gray-500 border-2xl rounded-lg p-1 "
