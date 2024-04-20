@@ -7,6 +7,7 @@ interface RowType {
   date: string;
   reportName: string;
   download: boolean;
+  time: string;
 }
 
 const columns = [
@@ -57,7 +58,16 @@ const Table = () => {
                           />
                         ) : (
                           <span className="xs:text-xs sm:text-sm  md:text-lg lg:text-xl">
-                            {row[column.accessor as keyof RowType]}
+                            {column.accessor === "date" ? (
+                              <>
+                                {row[column.accessor as keyof RowType]}
+                                <p className="text-xs text-slate-500">
+                                  {row.time}
+                                </p>
+                              </>
+                            ) : (
+                              <>{row[column.accessor as keyof RowType]}</>
+                            )}
                           </span>
                         )}
                       </td>
